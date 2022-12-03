@@ -293,7 +293,7 @@ func ValidateRequestBody(ctx context.Context, input *RequestValidationInput, req
 		}
 		// Put the data back into the input
 		req.Body = ioutil.NopCloser(bytes.NewReader(data))
-		req.ContentLength = int64(len(data))
+		// FIX: Reset request body
 	}
 
 	return nil
